@@ -1,0 +1,43 @@
+#web
+server.port: 8082
+#db
+jdbc:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://192.168.1.11:3306/hefan?useUnicode=true&amp;charaterEncoding=utf-8
+  username: saga
+  password: saga123saga
+  maxActive: 3
+  maxIdle: 30
+  minIdle: 5
+  maxWait: 3000
+  validationQuery: /* ping */ select 1
+  testOnBorrow: false
+  testOnReturn: false
+  testWhileIdle: true
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: -1
+#mongo
+spring.data.mongodb.host: 127.0.0.1
+spring.data.mongodb.port: 27017
+spring.data.mongodb.database: user
+#kafka
+kafka:
+  broker:
+    address: 192.168.1.203:9092
+  zookeeper:
+    connect: 192.168.1.203:2181
+  topic: test.topic
+  messageKey: test.topic
+#zookeeper:
+zookeeper:
+  host: 192.168.1.203
+  port: 2181
+#mq
+mq:
+  enabled: false
+#liquibase
+liquibase:
+  enabled: true
+#graceful shutdown
+management.port: 8181
+endpoints.shutdown.enabled: true
